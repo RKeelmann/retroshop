@@ -1,0 +1,296 @@
+<html>
+	<head>
+		<title>
+		Retro shop
+		</title>
+		<link rel="stylesheet" href="retroshop.css"/>
+	<style>
+		#items {
+	border: 2em;
+}
+
+img {
+	width: 5%;
+	height: 5%;
+}
+.kast {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 2em;
+	width: 10em;
+	align-items: flex-start;
+	justify-content: space-between;
+
+}
+.suurkast {
+	display: flex;
+	flex-flow: row wrap;
+}
+.pilt {
+	width: 5em;
+	height: 5em;
+}
+.vaikekast {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: space-between;
+}
+#check {
+
+}
+#navbar {
+	overflow: hidden;
+  	background-color: #333;
+}
+#navbar a {
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  	float: left;
+  	color: #f2f2f2;
+  	padding: 1em;
+  	text-decoration: none;
+  }
+  #navbar p {
+  	float: right;
+  	padding: 1em;
+  }
+  #nupp {
+  	transition-duration: 0.4s;
+  	border-radius: 10%;
+  	margin: 1em;
+}
+
+#nupp:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+  
+  #einupp {
+  	transition-duration: 0.4s;
+  	border-radius: 10%;
+  	margin: 1em;
+}
+
+#einupp:hover {
+  background-color: #FF0000;
+  color: white;
+}
+#tiitel {
+	font-size: 1.5em;
+	color: red;
+}
+
+
+
+	</style>
+	</head>
+
+	<div id="navbar">
+ 		<a href="#home">Home</a>
+  		<a href="#news">News</a>
+  		<a href="#contact">Contact</a>
+  		<a href="#about">About</a>
+  		<p id="check"> </p>
+	</div>
+	
+	<body>
+	<p id="value"> </p>
+	<div id="box"; class="suurkast">
+	</div>
+	<script>
+	var items = [
+        {
+            "id": 0,
+            "title": "Hat",
+            "imageURL": "https://i.imgur.com/HgIzJ0O.png",
+            "description": "A retro hat from 1972 wore by Jim Morrison. Size L",
+            "price": 25.99
+        },
+        {
+            "id": 1,
+            "title": "Guitar",
+            "imageURL": "https://i.imgur.com/1pc347r.png",
+            "description": "Used by Jimi Hendrix in Spain tour 1969. Left-handed.",
+            "price": 7560
+        },
+        {
+            "id": 2,
+            "title": "Headset",
+            "imageURL": "https://i.imgur.com/BU1u53U.png",
+            "description": "Mono/Stereo sound.",
+            "price": 129.99
+        },
+        {
+            "id": 3,
+            "title": "Backpack",
+            "imageURL": "https://i.imgur.com/WOGQ3ll.png",
+            "description": "25 liters travel fake-leather",
+            "price": 59.99
+        },
+        {
+            "id": 4,
+            "title": "Glasses",
+            "imageURL": "https://i.imgur.com/KQssRzO.png",
+            "description": "-3.75 left eye -4.25 right eye. Can you buy glasses like this somewhere else? You cannot.",
+            "price": 158.45
+        },
+        {
+            "id": 5,
+            "title": "Camera",
+            "imageURL": "https://i.imgur.com/hifcDsd.png",
+            "description": "Works only with Kodak Pro-289l films",
+            "price": 46.15
+        },
+        {
+            "id": 6,
+            "title": "Skate",
+            "imageURL": "https://i.imgur.com/KiZi7HQ.png",
+            "description": "Tony Hawks first skate.",
+            "price": 2500
+        },
+        {
+            "id": 7,
+            "title": "Shirt",
+            "imageURL": "https://i.imgur.com/4OZIWFV.png",
+            "description": "Wore by Elvis Presley in Acapulco film.",
+            "price": 756
+        },
+        {
+            "id": 8,
+            "title": "Sneakers",
+            "imageURL": "https://i.imgur.com/4GtCkkJ.png",
+            "description": "Used by Bugs Bunny in Space-Jam",
+            "price": 259.30
+        },
+        {
+            "id": 9,
+            "title": "Shoes",
+            "imageURL": "https://i.imgur.com/uRXDvwK.png",
+            "description": "Only one. Right foot.",
+            "price": 79.99
+        },
+        {
+            "id": 10,
+            "title": "Red Hat",
+            "imageURL": "https://i.imgur.com/qvwxXYY.png",
+            "description": "Outlander's costume. Unique piece!",
+            "price": 250
+        },
+        {
+            "id": 11,
+            "title": "Brown Beanie",
+            "imageURL": "https://i.imgur.com/zZAtqkD.png",
+            "description": "Want to be cool but look like idiot? Buy this hat.",
+            "price": 829.15
+        },
+        {
+            "id": 12,
+            "title": "Blue Jeans",
+            "imageURL": "https://i.imgur.com/PMFkkjS.png",
+            "description": "Blue jeans, white shirt. Walked into the room you know you made my eyes burn",
+            "price": 150.90
+        },
+        {
+            "id": 13,
+            "title": "Brown Pants",
+            "imageURL": "https://i.imgur.com/PmCMb4p.png",
+            "description": "They are so ugly that we give them out for almost nothing",
+            "price": 1.99
+        },
+        {
+            "id": 14,
+            "title": "Radio",
+            "imageURL": "https://i.imgur.com/Xd1YRFS.png",
+            "description": "AM only. Volumne knob broken but works at max volume",
+            "price": 5.99
+        }        
+    ];
+    var totalprice = 0;
+    var number = 0;
+   
+
+
+
+    for (var index = 0; index < items.length; index++) {
+    	let item = items[index];
+
+		var div = document.createElement('div');
+		div.id = "asjad" + index;	
+		div.className = "kast";	
+		document.getElementById("box").appendChild(div);
+
+		//var id = document.createElement('p');
+		//id.innerHTML = items[index].id;
+		//document.getElementById("asjad" + index).appendChild(id);
+		var imageURL = document.createElement('img');
+		imageURL.src = items[index].imageURL;
+		imageURL.className = "pilt";
+		document.getElementById("asjad" + index).appendChild(imageURL);
+		
+		var title = document.createElement('p');
+		title.innerHTML = items[index].title;
+		title.id = "tiitel";
+		document.getElementById("asjad" + index).appendChild(title);
+		
+		var description = document.createElement('p');
+		description.innerHTML = items[index].description;
+		document.getElementById("asjad" + index).appendChild(description);
+		
+		var price = document.createElement('p');
+		price.innerHTML = "€" + items[index].price;
+		document.getElementById("asjad" + index).appendChild(price);
+		
+		var vaikediv = document.createElement('div');
+		vaikediv.id = "vaikeasjad" + index;
+		vaikediv.className = "vaikekast";
+		document.getElementById("asjad" + index).appendChild(vaikediv);
+
+		var addcart = document.createElement("button");
+		addcart.innerHTML = "Add" ;
+		addcart.id = "nupp";
+		document.getElementById("vaikeasjad" + index).appendChild(addcart);
+		addcart.addEventListener("click", function() {
+			totalprice = totalprice + item.price;
+			document.getElementById('check').innerHTML = number + " item(s) | €" + totalprice ;
+				number = number + 1;
+				muutus();
+
+		} );
+
+		document.getElementById("vaikeasjad" + index).appendChild(addcart);
+
+		var removecart = document.createElement("button");
+		removecart.innerHTML = "Remove" ;
+		removecart.id = "einupp";
+		document.getElementById("vaikeasjad" + index).appendChild(removecart);
+		removecart.addEventListener("click", function() {
+			if (number === 0) {
+			totalprice = 0;
+			document.getElementById('check').innerHTML = number + " item(s) | €" + totalprice ;
+				number = number;
+			}
+			else {
+				totalprice = totalprice - item.price;
+			document.getElementById('check').innerHTML = number + " item(s) | €" + totalprice ;
+				number = number - 1;
+				muutus();
+			}
+					
+		} );
+		
+		document.getElementById("vaikeasjad" + index).appendChild(removecart);
+			
+		}
+
+		function muutus() {
+			number = number;
+		}
+		
+
+
+    </script>
+     </body>
+     </html>
